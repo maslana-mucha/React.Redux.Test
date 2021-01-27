@@ -1,0 +1,12 @@
+@import '../styles/settings.scss';
+
+.headerContainer {
+  padding: ($base-size * 1.5);
+
+  span {
+    text-transform: uppercase;
+    color: $color-dark;
+    font-weight: 700;
+    font-size: ($base-size * 1.3);
+  }
+}

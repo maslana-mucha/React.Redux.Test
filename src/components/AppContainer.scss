@@ -1,0 +1,12 @@
+@import '../styles/settings.scss';
+
+.appContainer {
+  display: grid;
+  grid-template-columns: ($base-size * 6) 1fr 1fr 1fr;
+  grid-template-rows: ($base-size * 4.5) 1fr 1fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    'left upper upper upper'
+    'left main main main'
+    'left main main main';
+}
