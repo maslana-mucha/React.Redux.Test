@@ -19,15 +19,3 @@ table {
     border: 0.5px solid $color-darker;
   }
 }
-
-.avatar {
-  padding: ($base-size * 0.8);
-  height: ($base-size * 4.5);
-  width: ($base-size * 4.5);
-  // border-radius: 50%;
-
-  img {
-    height: 100%;
-    width: 100%;
-  }
-}

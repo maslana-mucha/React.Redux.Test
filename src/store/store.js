@@ -1,6 +1,10 @@
 import { combineReducers, createStore } from 'redux';
 
-const initialState = {};
+// import listData from '../data/listData';
+
+const initialState = {
+  // list: listData,
+};
 
 const reducers = {};
 

@@ -1,0 +1,13 @@
+@import '../styles/settings.scss';
+
+.avatar {
+  padding: ($base-size * 0.8);
+  height: ($base-size * 4.5);
+  width: ($base-size * 4.5);
+
+  img {
+    margin: 0 ($base-size);
+    height: 100%;
+    width: 100%;
+  }
+}
