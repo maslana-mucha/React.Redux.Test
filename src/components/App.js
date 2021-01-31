@@ -11,7 +11,9 @@ const App = () => {
         </div>
       </nav>
       <nav className={styles.app_nav_upper}>
-        <div className={styles.app_nav_upper__title}>Lista specjalistów</div>
+        <div className={styles.app_nav_upper__title}>
+          <span>Lista specjalistów</span>
+        </div>
       </nav>
       <div className={styles.app_list_container}>
         <List />

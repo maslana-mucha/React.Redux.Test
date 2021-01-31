@@ -30,6 +30,10 @@ th {
   padding-left: ($base-size * 6.7);
   font-weight: 500;
 
+  &:nth-of-type(1) {
+    width: 30%;
+  }
+
   &:last-of-type {
     border-left: 1px solid $color-darker;
   }
