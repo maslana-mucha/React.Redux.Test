@@ -1,9 +1,0 @@
-@import '../styles/settings.scss';
-
-.leftSidebar {
-  grid-area: left;
-  height: 100vh;
-  background-color: $color-bg-white;
-  border-right: 0.5px solid $color-darker;
-  text-align: center;
-}

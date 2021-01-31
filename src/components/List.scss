@@ -1,20 +1,20 @@
-@import '../styles/settings.scss';
+@import './styles/settings.scss';
 
-table {
+.list-table {
   margin: ($base-size * 2) auto;
 
   width: 95%;
   text-align: left;
   border-collapse: collapse;
 
-  thead {
+  &__head {
     background: $color-bg-light;
     font-weight: 400;
     line-height: ($base-size * 4.5);
     border: 0.5px solid $color-darker;
   }
 
-  tbody {
+  &__tbody {
     background: $color-bg-white;
     border: 0.5px solid $color-darker;
   }

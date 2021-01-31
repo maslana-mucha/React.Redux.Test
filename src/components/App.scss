@@ -1,0 +1,56 @@
+@import '../styles/settings.scss';
+
+.app {
+  display: grid;
+  grid-template-columns: ($base-size * 6) 1fr 1fr 1fr;
+  grid-template-rows: ($base-size * 4.5) 1fr 1fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    'left upper upper upper'
+    'left main main main'
+    'left main main main';
+}
+
+.app-nav-left {
+  grid-area: left;
+  height: 100vh;
+  background-color: $color-bg-white;
+  border-right: 0.5px solid $color-darker;
+  text-align: center;
+
+  &__logo {
+    padding: ($base-size * 1.5);
+
+    span {
+      text-transform: uppercase;
+      color: $color-dark;
+      font-weight: 700;
+      font-size: ($base-size * 1.3);
+    }
+  }
+}
+
+.app-nav-upper {
+  grid-area: upper;
+
+  display: flex;
+  align-items: center;
+
+  background-color: $color-bg-white;
+  width: 100vw;
+  border-bottom: 0.5px solid $color-darker;
+
+  &__title {
+    padding: ($base-size * 1.5);
+
+    span {
+      font-size: ($base-size * 1.3);
+      font-weight: 500;
+    }
+  }
+}
+
+.app-list-container {
+  grid-area: main;
+  background: $color-bg-darker;
+}

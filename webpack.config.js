@@ -4,7 +4,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const baseConfig = () => ({
-  entry: ['babel-polyfill', './src/index.js'],
+  entry: './src/index.js',
   output: {
     path: path.join(__dirname, 'dist'),
     publicPath: '/',

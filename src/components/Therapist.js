@@ -1,11 +1,11 @@
 import React from 'react';
-import styles from './Therapist.scss';
+import './Therapist.scss';
 
 const therapist = (props) => {
   return (
     <tr>
       <td>
-        <div className={styles.avatar}>
+        <div className="therapist-avatar">
           <img src={props.avatarUrl} alt="avatar" />
         </div>
       </td>

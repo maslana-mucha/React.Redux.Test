@@ -1,7 +1,8 @@
 import React from 'react';
-import styles from './List.scss';
+import './List.scss';
 
 import Therapist from './Therapist';
+import Pagination from '@material-ui/lab/Pagination';
 
 class List extends React.Component {
   state = {
@@ -29,20 +30,23 @@ class List extends React.Component {
 
   render() {
     return (
-      <table className={styles.therapistsList}>
-        <thead>
-          <tr>
-            <th className={styles.empty}></th>
-            <th>Specjalista</th>
-            <th>Specjalizacje</th>
-          </tr>
-        </thead>
-        <tbody>
-          {this.state.therapists.map((therapist) => (
-            <Therapist key={therapist.therapistId} {...therapist} />
-          ))}
-        </tbody>
-      </table>
+      <div>
+        <table className="list-table">
+          <thead className="list-table__head">
+            <tr>
+              <th></th>
+              <th>Specjalista</th>
+              <th>Specjalizacje</th>
+            </tr>
+          </thead>
+          <tbody className="list-table__body">
+            {this.state.therapists.map((therapist) => (
+              <Therapist key={therapist.therapistId} {...therapist} />
+            ))}
+          </tbody>
+        </table>
+        <Pagination count={10} variant="outlined" shape="rounded" />
+      </div>
     );
   }
 }
