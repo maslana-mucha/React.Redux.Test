@@ -1,13 +1,32 @@
 @import '../styles/settings.scss';
 
-.therapist-avatar {
-  padding: ($base-size * 0.8);
+td {
+  padding-left: ($base-size * 6.7);
   height: ($base-size * 4.5);
+  font-family: $font-text;
+  color: $color-text;
+  text-align: left;
+
+  &:nth-of-type(1) {
+    padding: 0;
+    line-height: ($base-size * 4.5);
+  }
+
+  &:last-of-type {
+    border-left: 1px solid $color-darker;
+  }
+}
+
+.therapist_avatar_wrapper {
+  margin: 0 ($base-size * 1.2);
+  padding: ($base-size * 0.7);
   width: ($base-size * 4.5);
+  height: ($base-size * 4.5);
+  float: left;
 
   img {
-    margin: 0 ($base-size);
     height: 100%;
     width: 100%;
+    border-radius: 50%;
   }
 }

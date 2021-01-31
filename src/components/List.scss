@@ -1,21 +1,36 @@
-@import './styles/settings.scss';
+@import '../styles/settings.scss';
 
-.list-table {
-  margin: ($base-size * 2) auto;
-
-  width: 95%;
+.list_table {
+  margin: ($base-size * 3);
   text-align: left;
   border-collapse: collapse;
 
   &__head {
     background: $color-bg-light;
     font-weight: 400;
-    line-height: ($base-size * 4.5);
-    border: 0.5px solid $color-darker;
+    border: 1px solid $color-darker;
   }
 
-  &__tbody {
+  &__body {
     background: $color-bg-white;
-    border: 0.5px solid $color-darker;
+    border: 1px solid $color-darker;
+  }
+}
+
+tr {
+  height: ($base-size * 4.5);
+  border-bottom: 1px solid $color-darker;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+th {
+  padding-left: ($base-size * 6.7);
+  font-weight: 500;
+
+  &:last-of-type {
+    border-left: 1px solid $color-darker;
   }
 }

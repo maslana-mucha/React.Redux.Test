@@ -1,19 +1,19 @@
 import React from 'react';
-import './App.scss';
+import styles from './App.scss';
 import List from './List';
 
 const App = () => {
   return (
-    <div className="app">
-      <nav className="app-nav-left">
-        <div className="app-nav-left__logo">
+    <div className={styles.app}>
+      <nav className={styles.app_nav_left}>
+        <div className={styles.app_nav_left__logo}>
           <span>TP</span>
         </div>
       </nav>
-      <nav className="app-nav-upper">
-        <div className="app-nav-upper__title">Lista specjalistów</div>
+      <nav className={styles.app_nav_upper}>
+        <div className={styles.app_nav_upper__title}>Lista specjalistów</div>
       </nav>
-      <div className="app-list-container">
+      <div className={styles.app_list_container}>
         <List />
       </div>
     </div>

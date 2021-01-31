@@ -11,7 +11,7 @@
     'left main main main';
 }
 
-.app-nav-left {
+.app_nav_left {
   grid-area: left;
   height: 100vh;
   background-color: $color-bg-white;
@@ -30,7 +30,7 @@
   }
 }
 
-.app-nav-upper {
+.app_nav_upper {
   grid-area: upper;
 
   display: flex;
@@ -50,7 +50,7 @@
   }
 }
 
-.app-list-container {
+.app_list_container {
   grid-area: main;
   background: $color-bg-darker;
 }
