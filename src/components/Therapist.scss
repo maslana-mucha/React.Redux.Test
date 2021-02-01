@@ -30,3 +30,38 @@ td {
     border-radius: 50%;
   }
 }
+
+.therapist_spec_wrapper {
+  position: relative;
+  z-index: 0;
+
+  &:hover {
+    position: relative;
+    z-index: 100;
+  }
+
+  &:hover div {
+    position: absolute;
+    width: 150px;
+    display: block;
+    visibility: visible;
+    padding: 4px;
+    background-color: #edeffe;
+    border: solid 1px #5e6dff;
+    text-align: left;
+    opacity: 0.85;
+    filter: alpha(opacity=85);
+    z-index: 100;
+  }
+
+  div {
+    position: absolute;
+    width: 150px;
+    display: none;
+    left: 20px;
+    top: 5px;
+    font: normal 11px verdana;
+    color: Black;
+    z-index: 0;
+  }
+}

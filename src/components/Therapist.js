@@ -1,25 +1,30 @@
 import React from 'react';
 import styles from './Therapist.scss';
 
-const therapist = (props) => {
-  const specializationsArr = props.specializations;
-  const specializationsVisible = specializationsArr.slice(0, 3).join(', ');
-  const string = specializationsVisible.toString();
-  console.log(string);
+const Therapist = (props) => {
+  const specArr = props.specializations;
+  const specString = specArr.join(', ');
 
   return (
     <tr>
-      <td className={styles.therapist_avatar_column}>
+      <td>
         <div className={styles.therapist_avatar_wrapper}>
           <img src={props.avatar} alt="avatar" />
         </div>
         <span>{props.name}</span>
       </td>
-      <td className={styles.therapist_spec_column}>
-        <span>{string}</span>
+      <td>
+        {specArr.length > 3 ? (
+          <span className={styles.therapist_spec_wrapper}>
+            {`${specArr.slice(0, 3).join(', ')}...`}
+            <div>{specString}</div>
+          </span>
+        ) : (
+          <span className={styles.therapist_spec_wrapper}>{specString}</span>
+        )}
       </td>
     </tr>
   );
 };
 
-export default therapist;
+export default Therapist;
