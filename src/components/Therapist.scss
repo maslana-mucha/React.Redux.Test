@@ -52,11 +52,25 @@ td {
     z-index: 100;
   }
 
+  &:hover div:before {
+    position: absolute;
+    bottom: -8px;
+    left: ($base-size * 3.5);
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 8px solid $color-light;
+    z-index: 99;
+  }
+
   div {
     position: absolute;
     top: 0;
     right: 0;
-    transform: translate(70%, -100%);
+    transform: translate(70%, -110%);
     max-width: ($base-size * 20);
     font-size: ($base-size);
     line-height: ($base-size * 1.5);
