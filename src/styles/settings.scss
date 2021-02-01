@@ -1,14 +1,16 @@
 $color-light: rgb(255, 255, 255);
 $color-darker: rgb(235, 233, 233);
-$color-dark: #151a61;
-$color-text: #2c2c2c;
+$color-dark: #333985;
+$color-text: #616161;
 
 $color-bg-white: rgb(255, 255, 255);
 $color-bg-light: rgb(247, 247, 247);
 $color-bg-darker: rgb(240, 243, 248);
 $color-bg-dark: rgb(223, 223, 223);
 
-$font-text: 'Poppins', sans-serif;
+$font-text: 'Roboto', sans-serif;
 
 $base-size: 12px;
 $transition: all 0.5s linear;
+$border-style: 1px solid $color-darker;
+$border-radius: 6px;

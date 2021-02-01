@@ -3,6 +3,7 @@ import styles from './List.scss';
 
 import Therapist from './Therapist';
 import Pagination from '@material-ui/lab/Pagination';
+// import { makeStyles } from '@material-ui/core/styles';
 
 class List extends React.Component {
   state = {
@@ -29,6 +30,9 @@ class List extends React.Component {
   }
 
   render() {
+    const therArr = this.state.therapists;
+    const short = therArr.splice(0, 11);
+
     return (
       <div>
         <table className={styles.list_table}>
@@ -39,12 +43,14 @@ class List extends React.Component {
             </tr>
           </thead>
           <tbody className={styles.list_table__body}>
-            {this.state.therapists.map((therapist) => (
+            {short.map((therapist) => (
               <Therapist key={therapist.therapistId} {...therapist} />
             ))}
           </tbody>
         </table>
-        <Pagination count={10} variant="outlined" shape="rounded" />
+        <div className={styles.pagination_wrapper}>
+          <Pagination count={10} variant="outlined" shape="rounded" />
+        </div>
       </div>
     );
   }
