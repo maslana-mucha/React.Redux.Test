@@ -55,10 +55,21 @@ th {
     left: 50%;
     transform: translate(-50%, -50%);
   }
+}
 
-  ul > li button {
+.pagination_wrapper ul > li button {
+  background-color: $color-bg-white;
+  border: $border-style;
+  font-size: ($base-size);
+
+  &:hover {
+    border: 1px solid $color-dark;
+    color: $color-dark;
     background-color: $color-bg-white;
-    border: $border-style;
-    font-size: ($base-size);
   }
 }
+
+// .Mui-selected {
+//   background-color: $color-bg-dark;
+//   color: $color-light;
+// }

@@ -3,7 +3,6 @@ import styles from './List.scss';
 
 import Therapist from './Therapist';
 import Pagination from '@material-ui/lab/Pagination';
-// import { makeStyles } from '@material-ui/core/styles';
 
 class List extends React.Component {
   state = {
