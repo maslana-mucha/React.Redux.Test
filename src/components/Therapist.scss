@@ -42,26 +42,26 @@ td {
 
   &:hover div {
     position: absolute;
-    width: 150px;
     display: block;
-    visibility: visible;
-    padding: 4px;
-    background-color: #edeffe;
-    border: solid 1px #5e6dff;
+    padding: ($base-size);
+    background-color: $color-bg-white;
+    border: none;
+    border-radius: 6px;
+    box-shadow: 0 0 6px $color-darker;
     text-align: left;
-    opacity: 0.85;
-    filter: alpha(opacity=85);
     z-index: 100;
   }
 
   div {
     position: absolute;
-    width: 150px;
+    top: 0;
+    right: 0;
+    transform: translate(70%, -100%);
+    max-width: ($base-size * 20);
+    font-size: ($base-size);
+    line-height: ($base-size * 1.5);
     display: none;
-    left: 20px;
-    top: 5px;
-    font: normal 11px verdana;
-    color: Black;
+
     z-index: 0;
   }
 }
