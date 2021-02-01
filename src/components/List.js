@@ -29,6 +29,7 @@ class List extends React.Component {
   }
 
   render() {
+    const therapistsArr = this.state.therapists;
     return (
       <div>
         <table className={styles.list_table}>
@@ -39,8 +40,13 @@ class List extends React.Component {
             </tr>
           </thead>
           <tbody className={styles.list_table__body}>
-            {this.state.therapists.map((therapist) => (
-              <Therapist key={therapist.therapistId} {...therapist} />
+            {therapistsArr.map((therapist) => (
+              <Therapist
+                key={therapist.therapistId}
+                avatar={therapist.avatarUrl}
+                name={therapist.fullName}
+                specializations={therapist.specializations}
+              />
             ))}
           </tbody>
         </table>
