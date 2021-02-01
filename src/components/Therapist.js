@@ -9,9 +9,9 @@ const Therapist = (props) => {
     <tr>
       <td>
         <div className={styles.therapist_avatar_wrapper}>
-          <img src={props.avatar} alt="avatar" />
+          <img src={props.avatarUrl} alt="avatar" />
         </div>
-        <span>{props.name}</span>
+        <span>{props.fullName}</span>
       </td>
       <td>
         {specArr.length > 3 ? (

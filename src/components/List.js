@@ -2,11 +2,12 @@ import React, { useState, useEffect } from 'react';
 import styles from './List.scss';
 
 import Therapist from './Therapist';
+import Pagination from './Pagination';
 
 const List = () => {
   const [therapists, setTherapists] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
-  const [therapistsPerPage, setTherapistsPerPage] = useState(11);
+  const [therapistsPerPage] = useState(11);
 
   useEffect(() => {
     (async () => {
@@ -29,6 +30,15 @@ const List = () => {
     })();
   }, []);
 
+  const indexOfLastTherapist = currentPage * therapistsPerPage;
+  const indexOfFirstTherapist = indexOfLastTherapist - therapistsPerPage;
+  const currentTherapists = therapists.slice(
+    indexOfFirstTherapist,
+    indexOfLastTherapist
+  );
+
+  const paginate = (pageNumber) => setCurrentPage(pageNumber);
+
   return (
     <div>
       <table className={styles.list_table}>
@@ -39,11 +49,16 @@ const List = () => {
           </tr>
         </thead>
         <tbody className={styles.list_table__body}>
-          {short.map((therapist) => (
+          {currentTherapists.map((therapist) => (
             <Therapist key={therapist.therapistId} {...therapist} />
           ))}
         </tbody>
       </table>
+      <Pagination
+        therapistsPerPage={therapistsPerPage}
+        totalTherapists={therapists.length}
+        paginate={paginate}
+      />
     </div>
   );
 };
