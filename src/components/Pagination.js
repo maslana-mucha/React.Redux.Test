@@ -1,4 +1,5 @@
 import React from 'react';
+import styles from './Pagination.scss';
 
 const Pagination = ({ therapistsPerPage, totalTherapists, paginate }) => {
   const pageNumbers = [];
@@ -8,11 +9,15 @@ const Pagination = ({ therapistsPerPage, totalTherapists, paginate }) => {
   }
 
   return (
-    <nav>
-      <ul className="pagination">
+    <nav className={styles.pagination}>
+      <ul className={styles.pagination__list}>
         {pageNumbers.map((number) => (
-          <li key={number} className="page-item">
-            <a onClick={() => paginate(number)} href="!#" className="page-link">
+          <li key={number} id={number}>
+            <a
+              onClick={() => paginate(number)}
+              href="!#"
+              className={styles.pagination__list_link}
+            >
               {number}
             </a>
           </li>

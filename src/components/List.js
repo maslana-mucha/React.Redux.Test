@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react';
 import styles from './List.scss';
 
 import Therapist from './Therapist';
-import Pagination from './Pagination';
+import Pagination from '@material-ui/lab/Pagination';
+// import Pagination from './Pagination';
 
 const List = () => {
   const [therapists, setTherapists] = useState([]);
@@ -25,8 +26,6 @@ const List = () => {
 
       const content = await rawResponse.json();
       setTherapists(content.therapists);
-
-      console.log(content.therapists);
     })();
   }, []);
 
@@ -37,7 +36,10 @@ const List = () => {
     indexOfLastTherapist
   );
 
-  const paginate = (pageNumber) => setCurrentPage(pageNumber);
+  const paginate = (pageNumber) => {
+    document.getElementById(`${pageNumber}`).classList.add('active');
+    setCurrentPage(pageNumber);
+  };
 
   return (
     <div>
@@ -55,9 +57,12 @@ const List = () => {
         </tbody>
       </table>
       <Pagination
-        therapistsPerPage={therapistsPerPage}
-        totalTherapists={therapists.length}
-        paginate={paginate}
+        // therapistsPerPage={therapistsPerPage}
+        // totalTherapists={therapists.length}
+        // paginate={paginate}
+        count={Math.ceil(therapists.length / therapistsPerPage)}
+        variant="outlined"
+        shape="rounded"
       />
     </div>
   );
