@@ -3,7 +3,6 @@ import styles from './List.scss';
 
 import Therapist from './Therapist';
 import Pagination from '@material-ui/lab/Pagination';
-// import Pagination from './Pagination';
 
 const List = () => {
   const [therapists, setTherapists] = useState([]);
@@ -36,9 +35,23 @@ const List = () => {
     indexOfLastTherapist
   );
 
-  const paginate = (pageNumber) => {
-    document.getElementById(`${pageNumber}`).classList.add('active');
-    setCurrentPage(pageNumber);
+  const handleChangePage = (e) => {
+    const pageNumber = e.target.textContent;
+
+    const aria = e.target.getAttribute('aria-label');
+    console.log(aria);
+
+    if (typeof parseInt(pageNumber) === 'number') {
+      setCurrentPage(pageNumber);
+    } else {
+      if (aria === 'Go to the next page') {
+        const nextPageNumber = currentPage + 1;
+        setCurrentPage(nextPageNumber);
+      } else {
+        const prevPageNumber = currentPage - 1;
+        setCurrentPage(prevPageNumber);
+      }
+    }
   };
 
   return (
@@ -57,12 +70,10 @@ const List = () => {
         </tbody>
       </table>
       <Pagination
-        // therapistsPerPage={therapistsPerPage}
-        // totalTherapists={therapists.length}
-        // paginate={paginate}
         count={Math.ceil(therapists.length / therapistsPerPage)}
         variant="outlined"
         shape="rounded"
+        onChange={handleChangePage}
       />
     </div>
   );
