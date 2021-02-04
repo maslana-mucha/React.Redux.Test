@@ -15,7 +15,7 @@
   grid-area: left;
   height: 100vh;
   background-color: $color-bg-white;
-  border-right: 0.5px solid $color-darker;
+  border-right: $border-style;
   text-align: center;
 
   &__logo {
@@ -37,7 +37,6 @@
   align-items: center;
 
   background-color: $color-bg-white;
-  width: 100vw;
   border-bottom: 0.5px solid $color-darker;
 
   &__title {

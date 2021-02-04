@@ -37,25 +37,38 @@ const List = () => {
 
   const handleChangePage = (e) => {
     const pageNumber = e.target.textContent;
-
-    const aria = e.target.getAttribute('aria-label');
-    console.log(aria);
+    const nextPageButton = e.target.getAttribute('d');
+    console.log(nextPageButton);
 
     if (typeof parseInt(pageNumber) === 'number') {
       setCurrentPage(pageNumber);
     } else {
-      if (aria === 'Go to the next page') {
-        const nextPageNumber = currentPage + 1;
-        setCurrentPage(nextPageNumber);
-      } else {
-        const prevPageNumber = currentPage - 1;
-        setCurrentPage(prevPageNumber);
-      }
+      // if (nextPageButton) {
+      //   const nextPageNumber = currentPage + 1;
+      //   setCurrentPage(nextPageNumber);
+      // } else {
+      //   const prevPageNumber = currentPage - 1;
+      //   setCurrentPage(prevPageNumber);
+      // }
     }
   };
 
   return (
-    <div>
+    <div className={styles.flex_container}>
+      {/* <Table>
+        <TableHead>
+          <TableRow></TableRow>
+        </TableHead>
+        <TableBody>
+
+        </TableBody>
+        <TableFooter>
+          <TableRow>
+            <Pagination></Pagination>
+          </TableRow>
+        </TableFooter>
+      </Table> */}
+
       <table className={styles.list_table}>
         <thead className={styles.list_table__head}>
           <tr>
@@ -69,12 +82,14 @@ const List = () => {
           ))}
         </tbody>
       </table>
-      <Pagination
-        count={Math.ceil(therapists.length / therapistsPerPage)}
-        variant="outlined"
-        shape="rounded"
-        onChange={handleChangePage}
-      />
+      <div className={styles.pagination}>
+        <Pagination
+          count={Math.ceil(therapists.length / therapistsPerPage)}
+          variant="outlined"
+          shape="rounded"
+          onChange={handleChangePage}
+        />
+      </div>
     </div>
   );
 };
