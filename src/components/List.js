@@ -35,40 +35,25 @@ const List = () => {
     indexOfLastTherapist
   );
 
-  const handleChangePage = (e) => {
-    const pageNumber = e.target.textContent;
-    const nextPageButton = e.target.getAttribute('d');
-    console.log(nextPageButton);
+  const handleChangePage = (e, currentPage) => {
+    let pageNumber = currentPage;
+    const pageButtonLabel = e.target.getAttribute('aria-label');
 
-    if (typeof parseInt(pageNumber) === 'number') {
+    if (pageButtonLabel !== null) {
+      pageNumber = e.target.textContent;
       setCurrentPage(pageNumber);
     } else {
-      // if (nextPageButton) {
-      //   const nextPageNumber = currentPage + 1;
-      //   setCurrentPage(nextPageNumber);
-      // } else {
-      //   const prevPageNumber = currentPage - 1;
-      //   setCurrentPage(prevPageNumber);
-      // }
+      const arrowButtonLabel = e.target.parentNode.getAttribute('aria-label');
+      if (arrowButtonLabel.indexOf('next') != -1) {
+        setCurrentPage((pageNumber += 1));
+      } else {
+        setCurrentPage((pageNumber -= 1));
+      }
     }
   };
 
   return (
     <div className={styles.flex_container}>
-      {/* <Table>
-        <TableHead>
-          <TableRow></TableRow>
-        </TableHead>
-        <TableBody>
-
-        </TableBody>
-        <TableFooter>
-          <TableRow>
-            <Pagination></Pagination>
-          </TableRow>
-        </TableFooter>
-      </Table> */}
-
       <table className={styles.list_table}>
         <thead className={styles.list_table__head}>
           <tr>
