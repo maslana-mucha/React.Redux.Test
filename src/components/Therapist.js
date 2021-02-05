@@ -9,7 +9,14 @@ const Therapist = (props) => {
     <tr>
       <td>
         <div className={styles.therapist_avatar_wrapper}>
-          <img src={props.avatarUrl} alt="avatar" />
+          <img
+            src={
+              props.avatarUrl
+                ? props.avatarUrl
+                : 'https://i.postimg.cc/bJ5M9G3w/iconfinder-batman-hero-avatar-comics-4043232.png'
+            }
+            alt="avatar"
+          />
         </div>
         <span>{props.fullName}</span>
       </td>
